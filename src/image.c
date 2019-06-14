@@ -358,12 +358,17 @@ void draw_detections_2(image im, detection *dets, int num, float thresh, char **
             int top   = (b.y-b.h/2.)*im.h;
             int bot   = (b.y+b.h/2.)*im.h;
 
+            float left_r  = (b.x-b.w/2.);
+            float right_r = (b.x+b.w/2.);
+            float top_r   = (b.y-b.h/2.);
+            float bot_r   = (b.y+b.h/2.);
+
             if(left < 0) left = 0;
             if(right > im.w-1) right = im.w-1;
             if(top < 0) top = 0;
             if(bot > im.h-1) bot = im.h-1;
 
-            printf("%d,%d,%d,%d\n", left,top,right,bot);
+            printf("%f,%f,%f,%f\n", left_r,top_r,right_r,bot_r);
 
             draw_box_width(im, left, top, right, bot, width, red, green, blue);
             if (alphabet) {
