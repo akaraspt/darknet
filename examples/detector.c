@@ -576,6 +576,7 @@ void test_detector(char *datacfg, char *cfgfile, char *weightfile, char *filenam
     char buff_basename[256];
     char *img_fname = buff_basename;
     float nms=.45;
+    printf("filename,class_id,prob,left,top,right,bottom\n");
     while(1){
         if(filename){
             strncpy(input, filename, 256);
